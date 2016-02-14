@@ -25,7 +25,10 @@ class EpisodeController extends Controller
         })->values()->get($id - 1);
 
         if ($episode == null) {
-            abort(404);
+            return redirect('/')->with('flash_message', [
+                'title' => 'Episode Not Found',
+                'body' => 'Please select from the list below'
+            ]);
         }
 
         return view('episodes.show')
