@@ -1,23 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <nav class="episode-nav">
-        <ul>
-            @if (Request::path() != 1)
-            <li>
-                <a href="/{{ Request::path() - 1 }}">&lt;- Previous episode</a>
-            </li>
-            @endif
-            <li>
-                <a href="/">All episodes</a>
-            </li>
-            @if (Request::path() != $episodeCount)
-            <li>
-                <a href="/{{ Request::path() + 1 }}">Next episode -&gt;</a>
-            </li>
-            @endif
-        </ul>
-    </nav>
+    <p>
+    <a href="/" class="back-to-index">&lt;- All episodes</a>
+    </p>
 
     <div>
         <h1>{{ $episode->title }}</h1>

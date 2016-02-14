@@ -30,11 +30,10 @@ class EpisodeController extends Controller
                 'body' => 'Please select from the list below'
             ]);
         }
-
+        
         return view('episodes.show')
             ->with('podcast', $feed->info())
             ->with('pageTitle', $episode->title)
-            ->with('episode', $episode)
-            ->with('episodeCount', $feed->articles->count());
+            ->with('episode', $episode);
     }
 }
